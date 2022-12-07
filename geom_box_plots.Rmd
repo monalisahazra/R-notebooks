@@ -1,7 +1,7 @@
 ---
 title: "Geom box plot"
 author: "Monalisa Roy"
-output: html_notebook
+output: rmarkdown::github_document
 ---
 
 ### Read the data, load libraries

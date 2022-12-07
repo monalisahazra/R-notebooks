@@ -81,7 +81,7 @@ ggplot(data = placement,aes(x=specialisation,y=etest_p))+geom_boxplot()
 
 ![](geom_box_plots_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
 
-#Assigning ’ssc_b’to the fill aesthetic\*\*
+**Assigning ’ssc_b’to the fill aesthetic**
 
 ``` r
 ggplot(data = placement,aes(x=specialisation,y=etest_p,fill=ssc_b))+geom_boxplot()

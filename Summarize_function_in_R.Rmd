@@ -1,0 +1,88 @@
+---
+title: "Summarize function"
+author: "Monalisa Roy"
+output: html_notebook
+---
+
+### Read the data,load libraries
+```{r}
+install.packages("deplyr")
+library(deplyr)
+
+placement=read.csv("Placement_Data_Full_Class.csv",stringsAsFactors = T)
+View(placement)
+```
+
+
+
+#### Using summerize()function calculate the following for etest column.
+## Median
+## Variance
+## Standard Deviation
+```{r}
+summarise(placement,median=median(etest_p),var=var(etest_p),sd=sd(etest_p))
+
+```
+
+
+#### Calculate the following for MBA percentage(mba_p)of students:
+## Median
+## Variance
+## Standard Deviation
+```{r}
+summarise(placement,median=median(mba_p))
+
+summarise(placement,var=var(mba_p))
+
+summarise(placement,sd=sd(mba_p))
+```
+
+
+
+
+### Calculate the median of hsc_p and group it w.r.t 'Salary'column.
+```{r}
+group_by(placement,salary)->new_data
+summarise(new_data,hsc_median=median(hsc_p))
+```
+
+
+#### Calculate variance of ssc_p and group it w.r.t 'salary'column.
+```{r}
+group_by(placement,salary)->new_data1
+summarise(new_data1,ssc_var=var(ssc_p))
+```
+
+
+
+## There are some salaries that occur only once, hence the variance is NA. 
+## The following removes the NA values
+```{r}
+na.omit(summarise(new_data1,ssc_var=var(ssc_p)))
+
+```
+
+
+## or
+```{r}
+na.omit(summarise(group_by(placement,salary),ssc_var=var(ssc_p)))
+
+```
+
+
+#### Calculate standard deviation of etest_p and group it w.r.t.'Salary'
+## Keeping the rows without NA in the std dev. column
+```{r}
+na.omit(summarise(group_by(placement,salary),etest_p_sd=sd(etest_p)))
+
+```
+
+
+## If we want to keep the NA values
+```{r}
+summarise(group_by(placement,salary),etest_p_sd=sd(etest_p))
+
+```
+
+
+

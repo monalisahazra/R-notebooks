@@ -1,0 +1,63 @@
+---
+title: "Sample and Count function Case Study"
+author: "Monalisa Roy"
+output: html_notebook
+---
+
+### Read the data,load libraries
+```{r}
+customer=read.csv("customer-churn",stringsAsFactors = T)
+View(customer)
+
+install.packages("deplyr")
+library(deplyr)
+
+```
+
+
+
+#### Extract 333 random records from the customer_churn dataframe and store the result in 'customer_333'
+```{r}
+sample_n(customer,333)->customer_333
+View(customer_333)
+```
+
+
+
+#### Extract 1000 random records from the customer_churn dataframe and store the result in 'customer_1000'
+```{r}
+sample_n(customer,1000)->customer_1000
+View(customer_1000)
+```
+
+
+
+#### Randomly extract 23% of the records from the customer_churn dataframe and store the result in'customer_23_percent'.
+```{r}
+sample_frac(customer,0.23)->customer_23_percent
+View(customer_23_percent)
+```
+
+
+
+#### Get the count of different level from the 'PaymentMethod'columnn.
+```{r}
+count(customer,PaymentMethod,sort=TRUE)
+```
+
+
+## or
+```{r}
+count_(customer,"PaymentMethod",sort = TRUE)
+
+```
+
+#### Get the count of different levels from the 'Churn' column.
+```{r}
+count(customer,Churn,sort=TRUE)
+```
+
+
+
+
+

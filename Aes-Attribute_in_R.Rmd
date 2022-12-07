@@ -1,0 +1,75 @@
+---
+title: "Aes Attribute in R"
+author: Monalisa Roy
+output: html_notebook
+---
+
+### Read the data
+
+```{r}
+customer=read.csv("customer-churn",stringsAsFactors = T)
+View(customer)
+```
+### Install packages
+
+```{r}
+install.packages("ggplot2")
+library(ggplot2)
+```
+
+
+
+### Create the following bar-plot where
+## PhoneService column is assigned to the x aesthetic
+```{r}
+ggplot(data = customer,aes(x=PhoneService))+geom_bar(fill="lightblue",col="black")
+```
+
+
+## Gender column is assigned to the x aesthetic
+```{r}
+ggplot(data = customer,aes(x=gender))+geom_bar(fill="coral",col="black")
+```
+
+
+## InternetService is assigned to x aesthetic and MonthlyCharges to aesthetic
+```{r}
+ggplot(data = customer,aes(x=InternetService,fill=MonthlyCharges))+geom_bar(col="red")
+
+```
+
+
+## MonthlyCharges is assigned to x aesthetic and SeniorCitizen to aesthetic
+```{r}
+ggplot(data = customer,aes(x=MonthlyCharges,fill=SeniorCitizen))+geom_bar(col="coral")
+
+```
+
+
+## TotalCharges is assigned to x aesthetic and tenure to aesthetic
+```{r}
+ggplot(data = customer,aes(x=TotalCharges,fill=tenure))+geom_bar(col="purple")
+
+```
+
+
+## StreamingTV is assigned to x aesthetic and SeniorCitizen to aesthetic
+```{r}
+ggplot(data = customer,aes(x=StreamingTV,fill=SeniorCitizen))+geom_bar(col="cyan3")
+
+```
+
+
+## Dependents is assigned to x aesthetic and Partner to aesthetic
+```{r}
+ggplot(data = customer,aes(x=Dependents,fill=Partner))+geom_bar(col="deeppink")
+
+```
+
+
+
+
+
+
+
+

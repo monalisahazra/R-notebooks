@@ -1,0 +1,88 @@
+---
+title: "Data visualization -- Histogram"
+author: Monalisa Roy
+output: html_notebook
+---
+
+## Plotting histograms
+
+
+```{r}
+customer=read.csv("customer-churn",stringsAsFactors = T)
+View(customer)
+
+
+library(ggplot2)
+```
+
+### Histogram for the'tenure' column
+
+
+```{r}
+ggplot(data = customer,aes(x=tenure))+geom_histogram()
+```
+
+### Coloring with 'mediumspringgreen'
+
+```{r}
+ggplot(data = customer,aes(x=tenure))+geom_histogram(fill="mediumspringgreen")
+```
+
+### Boundary color
+
+```{r}
+ggplot(data = customer,aes(x=tenure))+geom_histogram(fill="mediumspringgreen",col="azure")
+```
+### Altering the number of the bins to be 100.
+```{r}
+ggplot(data = customer,aes(x=tenure))+geom_histogram(fill="mediumspringgreen",col="azure",bins = 100)
+```
+
+
+
+### Histogram for the'MonthlyCharges' column.
+```{r}
+ggplot(data = customer,aes(x=MonthlyCharges))+geom_histogram()
+```
+
+
+
+### 'PaymentMethod' to the fill aesthetic.
+```{r}
+ggplot(data = customer,aes(x=MonthlyCharges,fill=PaymentMethod))+geom_histogram()
+```
+
+
+
+### Assigning 'OnlineBackup' to the fill aesthetic.
+```{r}
+ggplot(data = customer,aes(x=MonthlyCharges,fill=OnlineBackup))+geom_histogram()
+```
+
+
+
+### Building a histogram for the 'TotalCharges'column
+```{r}
+ggplot(data=customer,aes(x=TotalCharges))+geom_histogram()
+```
+
+
+### 'gender' to the fill aesthetic.
+```{r}
+ggplot(data=customer,aes(x=TotalCharges,fill=gender))+geom_histogram()
+```
+
+
+
+### Assigning 'InternetService' to the fill aesthetic.
+
+```{r}
+ggplot(data=customer,aes(x=TotalCharges,fill=InternetService))+geom_histogram()
+```
+
+
+
+
+
+
+

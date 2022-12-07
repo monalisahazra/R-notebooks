@@ -1,0 +1,63 @@
+---
+title: "Array"
+author: "Monalisa Roy"
+output: html_notebook
+---
+
+
+### Read the data,load libraries
+```{r}
+
+customer=read.csv("customer-churn",stringsAsFactors = T)
+View(customer)
+
+placement=read.csv("Placement_Data_Full_Class.csv",stringsAsFactors = T)
+View(placement)
+
+```
+
+
+### Create an array as per the given data:
+
+## An array named array_total_charges that contains the first 10 values from the total charges column.
+```{r}
+array(data=customer$TotalCharges[1:10],dim = 10)->array_total_charges
+array_total_charges
+```
+
+
+
+## An array named array_monthly_charges that contains the first 5 values from the monthly charges column.
+```{r}
+
+array(data=customer$MonthlyCharges[1:5],dim = 5)->array_monthly_charges
+array_monthly_charges
+```
+
+
+### Create an array using placement dataset that comprises of:
+
+## Data of first 15 values from salary column.
+```{r}
+array(data = placement$salary[1:15],dim=15)->array_salary
+array_salary
+```
+
+
+
+## Data of first 5 values from mba_p column.
+```{r}
+array(data = placement$mba_p[1:5],dim = 5)->array_mba_p
+array_mba_p
+```
+
+
+
+## Data of first 10 values from e_test column.
+```{r}
+array(data = placement$etest_p[1:10],dim = 10)->array_etest_p
+array_etest_p
+```
+
+
+

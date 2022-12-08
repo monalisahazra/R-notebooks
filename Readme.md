@@ -15,7 +15,9 @@ The notebooks contain examples of mainly the following:
 
 4. SQLdf: running sql statements on R dataframes
 
-5. Different case studies 
+5. Different case studies
+
+6. **Linear regression**
 
 
 * Developed by Monalisa Roy (email: monalisahazra25@gmail.com)
